@@ -13,21 +13,24 @@
 
 1. Clone the repository:
 
-   `git clone git@github.com:jordicher/nestjs-typeorm-auth-template.git`
+   `git clone https://github.com/carlossilvestri/singular-nestjs-test.git`
 
 2. Open a terminal in the repository API folder:
 
-   `cd nestjs-typeorm-auth-template`
+   `cd singular-nestjs-test`
+3. Copy the `.env.docker` file to `.env` in the same root folder:
 
-3. Install dependencies:
+4. Run application using Docker (You need docker installed in your computer):
 
-   `npm install`
+   `docker-compose up --build`
+   
+5.- Open a web browser, go to http://localhost:8080/docs to see Swagger Doc, create a user using endpoint auth/signup 
 
 ## Project configuration
 
-1. Copy the `.env.example` file to `.env` in the same root folder:
+1. Copy the `.env.docker` file to `.env` in the same root folder:
 
-   `cp .env.example .env`
+   `cp .env.docker .env`
 
 2. As it is, it should work, but you can change these parameters:
 
@@ -46,7 +49,7 @@
    POSTGRES_PORT=5432
    POSTGRES_PASSWORD=templateUserPass
    POSTGRES_USER=templateUser
-   POSTGRES_HOST=localhost
+   POSTGRES_HOST=db
    ```
 
 2. Start the database with docker
@@ -99,8 +102,6 @@ $ npm run migration:run
 
 This template uses swagger for documentation.
 To see swagger, if you are using port 8080 for the api, it would be for example => localhost:8080/docs
-
-![imagen](https://user-images.githubusercontent.com/56872592/162640131-e28b39fc-a778-4718-b5aa-93fa62ec1daf.png)
 
 ## Endpoint security
 
