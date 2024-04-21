@@ -26,6 +26,13 @@
    
 5.- Open a web browser, go to http://localhost:8080/docs to see Swagger Doc, create a user using endpoint auth/signup 
 
+You should see something like:
+
+<img width="1680" alt="Screen Shot 2024-04-21 at 3 13 25 PM" src="https://github.com/carlossilvestri/singular-nestjs-test/assets/54336195/ff054b14-3123-4707-b3e7-2e84bc1dcaad">
+
+6. Use and test the API using Swagger or any tool like Postman. 
+
+
 ## Project configuration
 
 1. Copy the `.env.docker` file to `.env` in the same root folder:
