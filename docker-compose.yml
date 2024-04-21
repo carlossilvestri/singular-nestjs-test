@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: 'postgres'
+    container_name: 'template_postgres'
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      ALLOW_IP_RANGE: '0.0.0.0/0'
+    ports:
+      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nestjs
+    env_file: .env
+    ports:
+      - '${NESTJS_PORT}:${NESTJS_PORT}'
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src
